@@ -1,4 +1,5 @@
-import Module from './module';
 import Controller from './controller';
+import ExceptionError from './exceptionError';
+import Module from './module';
 
-export { Module, Controller };
+export { Module, Controller, ExceptionError };

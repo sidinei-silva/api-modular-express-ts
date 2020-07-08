@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { Controller } from '../../../../utils';
+
+import { Controller, ExceptionError } from '../../../../utils';
 
 class HelloControlleHandleNoAuth extends Controller {
   constructor() {
@@ -9,6 +10,7 @@ class HelloControlleHandleNoAuth extends Controller {
 
   initRoutes(route: Router) {
     route.get(this.path, this.index);
+    route.get(`/error`, this.error);
   }
 
   private async index(req: Request, res: Response) {
@@ -17,6 +19,14 @@ class HelloControlleHandleNoAuth extends Controller {
       data: {
         message: 'Hello Modulari',
       },
+    });
+  }
+
+  // Chamada simulando error
+  private async error(req: Request, res: Response) {
+    throw new ExceptionError(401, {
+      title: 'Ops...',
+      messages: ['Este é um exemplo de error'],
     });
   }
 }
