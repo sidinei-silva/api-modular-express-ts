@@ -13,5 +13,10 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-import-helpers": "^1.0.2",
     "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
   }
 }
