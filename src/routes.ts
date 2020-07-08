@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
+import { HelloModule } from './app/modules/hello';
+
 const routes = Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ message: 'Hello ' });
-});
+const modules = [HelloModule];
+
+modules.map(m => m.subscribeRoutes(routes));
 
 export default routes;
