@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Sidinei Silva <sidinei.silva02@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start:development": "ts-node-dev --respawn --transpileOnly src/server.ts",
+    "start:debug": "ts-node-dev --respawn --transpileOnly --inspect src/server.ts"
+  },
   "devDependencies": {
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.7",
